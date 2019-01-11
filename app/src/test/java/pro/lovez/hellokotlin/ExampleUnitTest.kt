@@ -13,9 +13,40 @@ class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
 
-        KotlinUnitNo1.baseType()
-        assertEquals(4, 2 + 2)
+//        KotlinUnitNo1.baseType()
+//        KotlinUnitNo1.foo()
+//        KotlinUnitNo1.base()
+
+        val ab: A = object : A(1), B {
+            override fun sun(): Int {
+                print("hahha")
+                return 1111
+            }
+
+            override var x: Int = 2
+        }
+
+
+        if (ab is B) {
+            println("是B")
+        }
+
+        if(ab is A){
+            println("是A")
+        }
+
+        KotlinUnitNo1.DataProviderManage.hahahahah()
+
     }
 
+
+    open class A(x: Int) {
+        open val y: Int = x
+    }
+
+    interface B {
+        var x: Int
+        fun sun(): Int
+    }
 
 }
